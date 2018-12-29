@@ -1,0 +1,15 @@
+<head>
+
+  <script>
+      function myCtrl() {
+          alert("You clicked");
+      }
+  </script>
+</head>
+<body>
+<h2>Product List</h2>
+
+<div *ngFor="let p of products" ng-click="myCtrl">
+  {{p.name}}
+</div>
+</body>
