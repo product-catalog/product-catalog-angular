@@ -1,15 +1,7 @@
-<head>
-
-  <script>
-      function myCtrl() {
-          alert("You clicked");
-      }
-  </script>
-</head>
-<body>
 <h2>Product List</h2>
 
-<div *ngFor="let p of products" ng-click="myCtrl">
-  {{p.name}}
-</div>
-</body>
+<a [routerLink]="['/products', p.recordId]" href="#" *ngFor="let p of products">
+  {{ p.name }}
+</a>
+
+<router-outlet></router-outlet>

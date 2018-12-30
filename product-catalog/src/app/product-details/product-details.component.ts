@@ -1,26 +1,20 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { Subscription } from 'rxjs';
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router'
+import { from } from 'rxjs';
 
 @Component({
   selector: 'app-product-details',
   templateUrl: './product-details.component.html',
   styleUrls: ['./product-details.component.css']
 })
-export class ProductDetailsComponent implements OnInit, OnDestroy {
+export class ProductDetailsComponent implements OnInit {
 
-  productId: number;
-  subscription: Subscription
+  recordId: number
 
-  constructor(private route: ActivatedRoute) { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
-    this.subscription = this.route.params.subscribe(params => {
-        this.productId = +params['id'];
-    });
+    this.recordId = parseInt(this.router.url.split("/")[2]);
   }
-  ngOnDestroy() {
-    this.subscription.unsubscribe();
-}
 
 }

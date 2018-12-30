@@ -6,6 +6,8 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { ProductListComponent } from './product-list/product-list.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
+import { RouterModule } from '@angular/router';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -17,6 +19,12 @@ import { ProductDetailsComponent } from './product-details/product-details.compo
     BrowserModule,
     FormsModule,
     HttpModule,
+    RouterModule.forRoot(
+      [
+        {path:"", component: ProductDetailsComponent}
+      ]
+    ),
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
