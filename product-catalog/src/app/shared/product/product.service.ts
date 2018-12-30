@@ -14,4 +14,8 @@ export class ProductService {
     return this.http.get('http://localhost:8080/product/getAll')
     .pipe(map(res => res.json()));
   }
+  getById(recordId: number): any {
+    return this.http.get('http://localhost:8080/product/getById/?id=' + recordId)
+    .pipe(map(res => res.json()));
+  }
 }
