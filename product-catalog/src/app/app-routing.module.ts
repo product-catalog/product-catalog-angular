@@ -6,11 +6,12 @@ import { ProductListComponent } from './product-list/product-list.component';
 import { Routes } from "@angular/router";
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import { AppComponent } from './app.component';
+import { MenuComponent } from './menu/menu.component';
 // [KEY]: Declare the Routes:
 const appRoutes: Routes = 
 [
   
-  { path: '', component: AppComponent },
+  { path: '', component: MenuComponent },
 
   { path: 'products', 
     component: ProductListComponent, 

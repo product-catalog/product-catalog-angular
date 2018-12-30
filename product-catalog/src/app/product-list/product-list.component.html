@@ -1,7 +1,8 @@
-<h2>Product List</h2>
-
-<a [routerLink]="['/products', p.recordId]" href="#" *ngFor="let p of products">
-  {{ p.name }}
-</a>
+<div *ngIf="_router.url == '/products'">
+  <h2>Product List</h2>
+  <a [routerLink]="['/products', p.recordId]" href="#" *ngFor="let p of products">
+    {{ p.name }}
+  </a>
+</div>
 
 <router-outlet></router-outlet>

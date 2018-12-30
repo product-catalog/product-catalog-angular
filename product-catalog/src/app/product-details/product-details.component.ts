@@ -11,10 +11,10 @@ export class ProductDetailsComponent implements OnInit {
 
   recordId: number
 
-  constructor(private router: Router) { }
+  constructor(private _router: Router) { }
 
   ngOnInit() {
-    this.recordId = parseInt(this.router.url.split("/")[2]);
+    this.recordId = parseInt(this._router.url.split("/")[2]);
   }
 
 }
