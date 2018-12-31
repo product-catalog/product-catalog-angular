@@ -6,4 +6,7 @@
 <p>{{product.description}}</p>
 <p>{{product.photo.photo}}</p>
 <span id="source" style="display:none">{{product.photo.photo}}</span>
+<li>
+  <a [routerLink]="['/edit', recordId]" href="#">Edit Product</a>
+</li>
 <p>{{product.price}}</p>

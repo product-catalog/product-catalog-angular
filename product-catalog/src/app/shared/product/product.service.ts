@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Http, Response, Headers } from '@angular/http';
 import { Observable, from } from 'rxjs'
 import { map} from 'rxjs/operators';
-import {ProductDto } from 'src/app/ProductDto';
+import {ProductDto, Product } from 'src/app/dtos';
 
 @Injectable({
   providedIn: 'root'
@@ -21,5 +21,8 @@ export class ProductService {
   }
   createNewProduct(product: ProductDto){
     return this.http.post('http://localhost:8080/product/new', product);
+  }
+  editProduct(product: Product){
+    return this.http.put('http://localhost:8080/product/edit', product);
   }
 }

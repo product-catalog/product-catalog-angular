@@ -8,6 +8,7 @@ import { ProductDetailsComponent } from './product-details/product-details.compo
 import { AppComponent } from './app.component';
 import { MenuComponent } from './menu/menu.component';
 import { ProductCreateComponent } from './product-create/product-create.component';
+import { ProductEditComponent } from './product-edit/product-edit.component';
 // [KEY]: Declare the Routes:
 const appRoutes: Routes = 
 [
@@ -22,7 +23,9 @@ const appRoutes: Routes =
     ]
   },
 
-  { path: 'create', component: ProductCreateComponent}
+  { path: 'create', component: ProductCreateComponent},
+
+  { path: 'edit/:recordId', component: ProductEditComponent}
 ];
 
 @NgModule({
