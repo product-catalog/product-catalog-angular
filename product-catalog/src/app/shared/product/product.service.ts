@@ -25,4 +25,7 @@ export class ProductService {
   editProduct(product: Product){
     return this.http.put('http://localhost:8080/product/edit', product);
   }
+  deleteProduct(recordId: number){
+    return this.http.delete('http://localhost:8080/product/delete?id=' + recordId);
+  }
 }

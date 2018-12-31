@@ -41,6 +41,10 @@ editProduct(){
   this.productService.editProduct(this.product).subscribe();
 }
 
+deleteProduct(){
+  this.productService.deleteProduct(this.recordId).subscribe();
+}
+
 onNameInput(event) {this.productName = event.target.value;}
 
 onDescriptionInput(event) {this.productDescription = event.target.value;}
