@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ProductService } from '../shared/product/product.service';
 import { User, Token } from '../dtos';
 import { Subscription } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -10,22 +11,31 @@ import { Subscription } from 'rxjs';
 })
 export class LoginComponent implements OnInit {
   user: User;
-  token: Subscription;
+  token: string;
   product: any;
-  constructor(private productService: ProductService) { }
+  username: string;
+  password: string;
+  constructor(private productService: ProductService,private _router: Router) { }
 
   ngOnInit() {
   }
 
   login(){
     this.user = new User();
-    this.user.username = "admin";
-    this.user.password = "admin";
+    this.user.username = this.username;
+    this.user.password = this.password;
     this.productService.getToken(this.user).subscribe(
       data => {
-        alert(JSON.stringify(data._body).substring(14, JSON.stringify(data._body).length - 4));
+        this.token = JSON.stringify(data._body).substring(14, JSON.stringify(data._body).length - 4);
+        this._router.navigateByUrl('/menu');
+        localStorage.setItem("token", this.token);
       },
       error => console.error(error)
     );
   }
+
+  onUsernameInput(event) {this.username = event.target.value;}
+
+  onPasswordInput(event) {this.password = event.target.value;}
+
 }
