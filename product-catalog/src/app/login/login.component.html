@@ -1,4 +1,22 @@
-<input type="text" (keyup)="onUsernameInput($event)" id="username">
-<input type="password" (keyup)="onPasswordInput($event)" id="password">
-<button type="button" class="btn btn-primary" (click)="login()">Login</button>
-<a routerLink="/register">Register</a>
+<body>
+  <div class="outer">
+    <div class="middle">
+      <div class="inner">
+        <div class="input-group input-group-sm mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-sm">Username</span>
+          </div>
+          <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" (keyup)="onUsernameInput($event)" id="username">
+        </div>
+        <div class="input-group input-group-sm mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-sm">Password</span>
+          </div>
+          <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" (keyup)="onPasswordInput($event)" id="password">
+        </div>
+        <button type="button" class="btn btn-primary btn-lg" (click)="login()" id="login">Login</button>
+        <button routerLink="/register" type="button" class="btn btn-secondary btn-lg" id="register">Register</button>
+      </div>
+    </div>
+  </div>
+</body>
