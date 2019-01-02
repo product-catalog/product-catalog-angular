@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Http, Response, Headers } from '@angular/http';
 import { Observable, from } from 'rxjs'
 import { map} from 'rxjs/operators';
-import {ProductDto, Product } from 'src/app/dtos';
+import {ProductDto, Product, User } from 'src/app/dtos';
 
 @Injectable({
   providedIn: 'root'
@@ -27,5 +27,8 @@ export class ProductService {
   }
   deleteProduct(recordId: number){
     return this.http.delete('http://localhost:8080/product/delete?id=' + recordId);
+  }
+  getToken(user: User): any{
+    return this.http.post('http://localhost:8080/token/generateToken', user);
   }
 }

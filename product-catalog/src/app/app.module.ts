@@ -11,6 +11,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { MenuComponent } from './menu/menu.component';
 import { ProductCreateComponent } from './product-create/product-create.component';
 import { ProductEditComponent } from './product-edit/product-edit.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { ProductEditComponent } from './product-edit/product-edit.component';
     ProductDetailsComponent,
     MenuComponent,
     ProductCreateComponent,
-    ProductEditComponent
+    ProductEditComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

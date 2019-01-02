@@ -43,3 +43,20 @@ export class Photo {
     
   }
 }
+
+export class User{
+  username:string;
+  password:string;
+
+  User(){
+
+  }
+}
+
+export class Token{
+  token: string;
+
+  Token(){
+    
+  }
+}
