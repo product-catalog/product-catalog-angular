@@ -16,7 +16,7 @@
           <input (keyup)="onDescriptionInput($event)" type="text" name="description" id="description" class="form-control"
             aria-label="Small" aria-describedby="inputGroup-sizing-sm">
         </div>
-        <div style="display: inline" class="input-group-prepend">
+        <div style="display:block" class="input-group-prepend">
             <span class="input-group-text" id="inputGroup-sizing-sm">Image</span>
           </div>
         <label class="att-each">
@@ -26,7 +26,7 @@
           <div class="input-group-prepend">
             <span class="input-group-text" id="inputGroup-sizing-sm">Price</span>
           </div>
-          <input input type="number" name="quantity" min="1" max="50" id="price" class="form-control" aria-label="Small"
+          <input (keyup)="onPriceInput($event)" type="number" name="quantity" min="1" max="50" id="price" class="form-control" aria-label="Small"
             aria-describedby="inputGroup-sizing-sm">
         </div>
         <input type="submit" value="Submit" class="btn btn-success btn-lg" (click)="createNewProduct()">

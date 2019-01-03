@@ -15,6 +15,7 @@ export class ProductCreateComponent implements OnInit, AfterViewInit {
   productDescription: string;
   photoName: string;
   photoPhoto: string;
+  price: number;
   constructor(private productService: ProductService) { }
 
   ngOnInit() {
@@ -33,6 +34,7 @@ export class ProductCreateComponent implements OnInit, AfterViewInit {
     this.product.description = this.productDescription;
     this.photo.name = this.photoName;
     this.photo.photo = document.getElementById("resultImage").innerHTML;
+    this.product.price = this.price;
     this.productService.createNewProduct(this.product, localStorage.getItem("token")).subscribe(
       data => {
         $(".alert-success").show().delay(5000).fadeOut();
@@ -44,6 +46,8 @@ export class ProductCreateComponent implements OnInit, AfterViewInit {
   onNameInput(event) {this.productName = event.target.value;}
 
   onDescriptionInput(event) {this.productDescription = event.target.value;}
+
+  onPriceInput(event) {this.price = event.target.value;}
 
   onFileSelected(file: HTMLInputElement) {
     this.photoName = file.name; 

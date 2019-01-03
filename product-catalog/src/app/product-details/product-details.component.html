@@ -1,12 +1,8 @@
-<p>
-  product-details works!
-</p>
-<p>{{recordId}}</p>
-<p>{{product.name}}</p>
-<p>{{product.description}}</p>
-<p>{{product.photo.photo}}</p>
+<p>id {{recordId}}</p>
+<p>name {{product.name}}</p>
+<p>description {{product.description}}</p>
 <span id="source" style="display:none">{{product.photo.photo}}</span>
 <li>
   <a [routerLink]="['/edit', recordId]" href="#">Edit Product</a>
 </li>
-<p>{{product.price}}</p>
+<p>price {{product.price}}</p>

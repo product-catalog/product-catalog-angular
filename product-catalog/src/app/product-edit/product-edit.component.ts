@@ -15,6 +15,7 @@ export class ProductEditComponent implements OnInit, AfterViewInit {
   productDescription: string;
   photoName: string;
   photoPhoto: string;
+  price: number;
 
   constructor(private productService: ProductService,private _router: Router) { }
 
@@ -38,6 +39,7 @@ editProduct(){
   this.product.description = this.productDescription;
   this.product.photo.name = this.photoName;
   this.product.photo.photo = document.getElementById("resultImage").innerHTML;
+  this.product.price = this.price;
   this.productService.editProduct(this.product).subscribe();
 }
 
@@ -48,6 +50,8 @@ deleteProduct(){
 onNameInput(event) {this.productName = event.target.value;}
 
 onDescriptionInput(event) {this.productDescription = event.target.value;}
+
+onPriceInput(event) {this.price = event.target.value;}
 
 onFileSelected(file: HTMLInputElement) {
   this.photoName = file.name; 
