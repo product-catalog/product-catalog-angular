@@ -21,7 +21,6 @@ export class LoginComponent implements OnInit {
   }
 
   login(){
-    $(".alert-danger").show().delay(5000).fadeOut();
     this.user = new User();
     this.user.username = this.username;
     this.user.password = this.password;
@@ -31,7 +30,7 @@ export class LoginComponent implements OnInit {
         this._router.navigateByUrl('/menu');
         localStorage.setItem("token", this.token);
       },
-      error => console.error(error)
+      error =>  $(".alert-danger").show().delay(5000).fadeOut()
     );
   
   }

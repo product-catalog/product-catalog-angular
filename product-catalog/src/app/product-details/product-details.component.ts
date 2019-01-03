@@ -17,7 +17,7 @@ export class ProductDetailsComponent implements OnInit, AfterViewInit {
 
   ngOnInit() {
     this.recordId = parseInt(this._router.url.split("/")[2]);
-    this.productService.getById(this.recordId).subscribe(
+    this.productService.getById(this.recordId, localStorage.getItem("token")).subscribe(
       data => {
         this.product = data;
       },

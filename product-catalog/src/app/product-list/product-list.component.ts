@@ -42,9 +42,10 @@ export class ProductListComponent implements OnInit {
 
   changePrice(event){
     this.filterPriceValue = event.target.value;
-    this.productService.getAll().subscribe(
+    this.productService.getAll(localStorage.getItem("token")).subscribe(
       data => {
         this.filteredProducts = this.products;
+        document.getElementById("valuePriceFilter").innerText = this.filterPriceValue;
         this.filteredProducts = this.filteredProducts.filter(product => new RegExp(this.filterNameValue).test(product.name));
         this.filteredProducts = this.filteredProducts.filter(product => product.price > this.filterPriceValue);
       },

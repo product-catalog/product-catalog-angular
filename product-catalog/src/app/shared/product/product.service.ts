@@ -19,8 +19,12 @@ export class ProductService {
     return this.http.get('http://localhost:8080/product/getAll', { headers: headers })
     .pipe(map(res => res.json()));
   }
-  getById(recordId: number): any {
-    return this.http.get('http://localhost:8080/product/getById/?id=' + recordId)
+  getById(recordId: number, token: string): any {
+    const headers = new Headers({
+      'Content-Type': 'application/json',
+      'Authorization': "Bearer " + token
+    })
+    return this.http.get('http://localhost:8080/product/getById/?id=' + recordId, {headers: headers})
     .pipe(map(res => res.json()));
   }
   createNewProduct(product: ProductDto, token: string){

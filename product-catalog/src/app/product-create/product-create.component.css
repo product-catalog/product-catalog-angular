@@ -1,0 +1,40 @@
+body {
+  background-image: url("../background.jpg");
+  height: -webkit-fill-available;
+}
+
+.outer {
+  display: table;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.middle {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.inner {
+  margin-left: auto;
+  margin-right: auto;
+  width: 400px;
+  text-align: -webkit-center;
+  /*whatever width you want*/
+}
+
+#resultImage {
+  display: none;
+}
+
+label.att-each {
+    padding: 2px;
+    display: inline-block !important;
+    margin-right: 18px !important;
+    width: 68px;
+    height: 68px;
+    background: url("../add-file.png") no-repeat;
+    text-indent: -9999px;
+}
