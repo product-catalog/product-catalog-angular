@@ -20,7 +20,7 @@ export class ProductListComponent implements OnInit {
   ngOnInit() {
     this.filterPriceValue = 0;
     this.filterNameValue = "";
-    this.productService.getAll().subscribe(
+    this.productService.getAll(localStorage.getItem("token")).subscribe(
       data => {
         this.products = data;
         this.filteredProducts = data;
@@ -31,7 +31,7 @@ export class ProductListComponent implements OnInit {
 
   changeNameInput(event){
     this.filterNameValue = event.target.value;
-    this.productService.getAll().subscribe(
+    this.productService.getAll(localStorage.getItem("token")).subscribe(
       data => {
         this.filteredProducts = this.products;
         this.filteredProducts = this.filteredProducts.filter(product => new RegExp(this.filterNameValue).test(product.name)).filter(product => product.price > this.filterPriceValue);

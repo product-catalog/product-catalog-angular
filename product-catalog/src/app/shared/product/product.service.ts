@@ -11,16 +11,24 @@ export class ProductService {
 
   constructor(private http: Http) { }
 
-  getAll(): Observable<any> {
-    return this.http.get('http://localhost:8080/product/getAll')
+  getAll(token: string): Observable<any> {
+    const headers = new Headers({
+      'Content-Type': 'application/json',
+      'Authorization': "Bearer " + token
+    })
+    return this.http.get('http://localhost:8080/product/getAll', { headers: headers })
     .pipe(map(res => res.json()));
   }
   getById(recordId: number): any {
     return this.http.get('http://localhost:8080/product/getById/?id=' + recordId)
     .pipe(map(res => res.json()));
   }
-  createNewProduct(product: ProductDto){
-    return this.http.post('http://localhost:8080/product/new', product);
+  createNewProduct(product: ProductDto, token: string){
+    const headers = new Headers({
+      'Content-Type': 'application/json',
+      'Authorization': "Bearer " + token
+    })
+    return this.http.post('http://localhost:8080/product/new', product, {headers: headers});
   }
   editProduct(product: Product){
     return this.http.put('http://localhost:8080/product/edit', product);
@@ -30,5 +38,8 @@ export class ProductService {
   }
   getToken(user: User): any{
     return this.http.post('http://localhost:8080/token/generateToken', user);
+  }
+  register(user: User): any{
+    return this.http.post('http://localhost:8080/signup', user);
   }
 }

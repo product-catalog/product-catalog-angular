@@ -33,7 +33,7 @@ export class ProductCreateComponent implements OnInit, AfterViewInit {
     this.product.description = this.productDescription;
     this.photo.name = this.photoName;
     this.photo.photo = document.getElementById("resultImage").innerHTML;
-    this.productService.createNewProduct(this.product).subscribe();
+    this.productService.createNewProduct(this.product, localStorage.getItem("token")).subscribe();
   }
 
   onNameInput(event) {this.productName = event.target.value;}
