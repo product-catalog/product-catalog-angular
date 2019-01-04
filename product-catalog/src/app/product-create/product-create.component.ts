@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AfterViewInit } from "@angular/core";
 import { ProductDto, PhotoDto} from "src/app/dtos";
 import { ProductService } from '../shared/product/product.service';
+import * as $ from 'jquery';
 
 @Component({
   selector: 'app-product-create',
