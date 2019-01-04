@@ -3,6 +3,7 @@ import { ProductService } from '../shared/product/product.service';
 import { User, Token } from '../dtos';
 import { Subscription } from 'rxjs';
 import { Router } from '@angular/router';
+import * as $ from 'jquery';
 
 @Component({
   selector: 'app-login',
